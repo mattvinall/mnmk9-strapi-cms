@@ -1,5 +1,5 @@
 {
-  "name": "mnmk-9-website-cms",
+  "name": "api",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -20,7 +20,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "d764bb09-d32e-4a25-99b3-edd965239637"
+    "uuid": "77d78392-e61f-4e08-ae17-46db5468caf5"
   },
   "engines": {
     "node": ">=14.19.1 <=18.x.x",
