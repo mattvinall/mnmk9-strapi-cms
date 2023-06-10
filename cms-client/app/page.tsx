@@ -1,9 +1,9 @@
-import Header from "./components/Header"
+import Hero from "./components/Hero"
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Hero />
       <section className="flex flex-col items-center justify-between p-24">
         <h1>Main content here...</h1>
       </section>
