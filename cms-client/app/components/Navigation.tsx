@@ -16,6 +16,39 @@ const Navigation = () => {
     setIsOpen(false);
   }
 
+  const Links = [
+    {
+      name: "Home",
+      href: "/",
+      className: "block py-2 px-4 text-white hover:bg-gray-800 md:inline-block"
+    },
+    {
+      name: "About",
+      href: "/about",
+      className: "block py-2 px-4 text-white hover:bg-gray-800 md:inline-block"
+    },
+    {
+      name: "Services",
+      href: "/services",
+      className: "block py-2 px-4 text-white hover:bg-gray-800 md:inline-block"
+    },
+    {
+      name: "Blog",
+      href: "/blog",
+      className: "block py-2 px-4 text-white hover:bg-gray-800 md:inline-block"
+    },
+    {
+      name: "Gallery",
+      href: "/gallery",
+      className: "block py-2 px-4 text-white hover:bg-gray-800 md:inline-block"
+    },
+    {
+      name: "Contact",
+      href: "/contact",
+      className: "block py-2 px-4 text-white hover:bg-gray-800 md:inline-block"
+    }
+  ];
+
   return (
     <nav className="bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
@@ -53,22 +86,13 @@ const Navigation = () => {
             </button>
           </div>
           <div className={`fixed top-20 bottom-0 h-[85%] overflow-y-none right-0 w-1/3 md:w-2/3 lg:w-1/2 h-screen bg-gray-900 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:static md:translate-x-0 md:flex md:flex-row md:space-x-8 md:bg-transparent md:h-auto`}>
-            <div className="mt-16 space-y-8 text-center md:mt-0 md:space-y-0 md:flex md:flex-row md:space-x-8">
-              <Link className="block py-2 px-4 text-white hover:bg-gray-800 md:inline-block" href="/" onClick={closeMenu}>
-                Home
-              </Link>
-              <Link className="block py-2 px-4 text-white hover:bg-gray-800 md:inline-block" href="/about" onClick={closeMenu}>
-                About
-              </Link>
-              <Link className="block py-2 px-4 text-white hover:bg-gray-800 md:inline-block" href="/services" onClick={closeMenu}>
-                Services
-              </Link>
-              <Link className="block py-2 px-4 text-white hover:bg-gray-800 md:inline-block" href="/gallery" onClick={closeMenu}>
-                Gallery
-              </Link>
-              <Link className="block py-2 px-4 text-white hover:bg-gray-800 md:inline-block" href="/contact" onClick={closeMenu}>
-                Contact
-              </Link>
+            <div className="mt-16 space-y-8 text-center md:mt-0 md:space-y-0 md:flex md:flex-row md:space-x-2">
+              {Links?.map(link => {
+                const { name, href, className } = link
+                return (
+                  <Link href={href} className={className}>{name}</Link>
+                )
+              })}
             </div>
           </div>
         </div>
