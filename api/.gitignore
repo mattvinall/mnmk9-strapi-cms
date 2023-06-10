@@ -60,12 +60,12 @@ $RECYCLE.BIN/
 *.out
 *.pid
 
+
 ############################
 # Logs and databases
 ############################
 
 .tmp
-data.db
 *.log
 *.sql
 *.sqlite
