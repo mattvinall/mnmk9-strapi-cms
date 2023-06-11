@@ -64,25 +64,23 @@ const Navigation = () => {
               className="text-gray-300 hover:text-white focus:outline-none focus:text-white"
               onClick={isOpen ? closeMenu : toggleMenu}
             >
-              <svg
-                className="h-6 w-6 fill-current"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {isOpen ? (
+              {!isOpen ? (
+                <svg
+                  className="h-8 w-8 fill-current"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
                     fillRule="evenodd"
                     clipRule="evenodd"
                     d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"
                   />
-                ) : (
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"
-                  />
-                )}
-              </svg>
+                </svg>
+              ) : (
+                <svg className="h-8 w-8 fill-current" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              )}
             </button>
           </div>
           <div className={`fixed top-20 bottom-0 h-[85%] overflow-y-none right-0 w-1/3 md:w-2/3 lg:w-1/2 h-screen bg-gray-900 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:static md:translate-x-0 md:flex md:flex-row md:space-x-8 md:bg-transparent md:h-auto`}>
@@ -90,7 +88,7 @@ const Navigation = () => {
               {Links?.map((link, idx) => {
                 const { name, href, className } = link
                 return (
-                  <Link key={idx} href={href} className={className}>{name}</Link>
+                  <Link key={idx} href={href} className={className} onClick={closeMenu}>{name}</Link>
                 )
               })}
             </div>
