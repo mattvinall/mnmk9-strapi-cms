@@ -13,7 +13,7 @@ export default async function Blog() {
 
   return (
     <section className="container p-24">
-      <h1 className="text-center text-3xl font-extrabold tracking-tight text-white sm:text-[3rem]">Blog <span className="text-[rgb(103,163,161)]">Posts</span></h1>
+      <h1 className="text-center text-3xl font-extrabold tracking-tight text-white sm:text-[3rem]">MNM-K9 <span className="text-[rgb(103,163,161)]">Blog</span></h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-[50px]">
         {/* blog posts go here */}
         {blogPosts?.map((post: Post) => {
