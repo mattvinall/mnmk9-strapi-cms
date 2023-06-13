@@ -12,16 +12,20 @@ export default async function Blog() {
   if (!blogPosts || blogPosts.length === 0) return;
 
   return (
-    <section className="flex flex-col items-center justify-between p-12">
-      <h1>Blog</h1>
-      {/* blog posts go here */}
-      {blogPosts?.map((post: Post) => {
-        const { attributes } = post
-        const { slug } = attributes;
-        return (
-          <BlogPosts key={slug} attributes={attributes} />
-        )
-      })}
+    <section className="container p-24">
+      <h1 className="text-center text-3xl font-extrabold tracking-tight text-white sm:text-[3rem]">Blog <span className="text-[rgb(103,163,161)]">Posts</span></h1>
+      <div className="grid grid-cols-3 mt-[50px]">
+        {/* blog posts go here */}
+        {blogPosts?.map((post: Post) => {
+          const { attributes } = post
+          const { slug } = attributes;
+          return (
+            <article className="border mx-4">
+              <BlogPosts key={slug} attributes={attributes} />
+            </article>
+          )
+        })}
+      </div>
     </section>
   )
 }
