@@ -1,15 +1,4 @@
-interface Post {
-  attributes: {
-    title?: string,
-    body?: string,
-    author?: string,
-    slug: string
-    createdAt?: Date,
-    updatedAt?: Date,
-    publishedAt?: Date,
-  }
-}
-
+import { Post } from "@/app/types/post";
 interface Params {
   params: {
     slug: string
@@ -26,18 +15,18 @@ export default async function BlogPost({ params }: Params) {
 
   const { attributes } = post;
 
-  const { title, body, createdAt } = attributes;
+  const { title, author, body, createdAt } = attributes;
 
   return (
     <section className="flex flex-col items-center justify-between p-24">
-      <ul className="text-white">
-        <li>{title}</li>
-        <li>{new Date(createdAt as Date).toLocaleDateString("en")}</li>
-        <li>{body}</li>
-      </ul>
+      <div className="bg-gray-900 text-white p-6">
+        <h2 className="text-3xl font-semibold mb-4">{title}</h2>
+        <p className="text-gray-500 mb-2">By {author}</p>
+        <p className="text-gray-500 mb-4">{new Date(createdAt as Date).toLocaleDateString()}</p>
+        <div className="prose prose-lg">{body}</div>
+      </div>
     </section>
-  )
-
+  );
 }
 
 const getBlogPost = async (slug: string) => {
