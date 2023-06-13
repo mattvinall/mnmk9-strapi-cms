@@ -83,7 +83,7 @@ const Navigation = () => {
               )}
             </button>
           </div>
-          <div className={`fixed top-20 bottom-0 h-[85%] overflow-y-none right-0 w-1/3 md:w-2/3 lg:w-1/2 h-screen bg-gray-900 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:static md:translate-x-0 md:flex md:flex-row md:space-x-8 md:bg-transparent md:h-auto`}>
+          <div className={`fixed top-20 bottom-0 h-[85%] overflow-y-none right-0 w-64 sm:w-1/3 md:w-2/3 lg:w-1/2 h-screen bg-gray-900 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} md:static md:translate-x-0 md:flex md:flex-row md:space-x-8 md:bg-transparent md:h-auto`}>
             <div className="mt-16 space-y-8 text-center md:mt-0 md:space-y-0 md:flex md:flex-row md:space-x-2">
               {Links?.map((link, idx) => {
                 const { name, href, className } = link
